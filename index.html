@@ -31,22 +31,36 @@
 
   .pb-hero { position: relative; background: var(--white); padding: 34px 48px 56px; overflow: hidden; border-bottom: 1px solid var(--gray-2); }
   .pb-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--grad-wa); }
-  .pb-hero-glow { position: absolute; top: -160px; right: -120px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(37,211,102,0.10) 0%, transparent 68%); pointer-events: none; }
-  @media (max-width: 768px) { .pb-hero { padding: 26px 20px 40px; } }
-  .pb-hero-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 40px; position: relative; z-index: 2; }
+  .pb-hero-glow { position: absolute; top: -180px; right: -80px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(37,211,102,0.12) 0%, transparent 66%); pointer-events: none; }
+  @media (max-width: 768px) { .pb-hero { padding: 26px 20px 44px; } }
+  .pb-hero-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 48px; position: relative; z-index: 2; }
   .pb-hero-top .logo-svg { height: 26px; width: auto; color: var(--ink); }
-  .pb-hero-copy { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
   .eyebrow { display: inline-flex; align-items: center; gap: 7px; background: var(--white); border: 1px solid var(--gray-3); color: var(--ink-2); font-size: 12.5px; font-weight: 500; padding: 6px 15px; border-radius: 999px; letter-spacing: -0.01em; margin-bottom: 18px; }
   .eyebrow.wa { background: var(--wa-muted); border-color: rgba(37,211,102,0.28); color: var(--wa-deep); }
   .eyebrow .wa-badge { width: 15px; height: 15px; }
+
+  .pb-hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 56px; align-items: center; position: relative; z-index: 2; }
+  @media (max-width: 900px) { .pb-hero-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .pb-hero-copy { max-width: 560px; }
   .pb-hero-title { font-family: var(--f-display); font-size: clamp(30px, 4.4vw, 46px); font-weight: 600; color: var(--ink); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 18px; }
   .pb-hero-title .accent { color: var(--wa-deep); }
-  .pb-hero-desc { font-size: 17px; color: var(--muted); line-height: 1.62; max-width: 680px; margin: 0 auto 26px; }
+  .pb-hero-desc { font-size: 17px; color: var(--muted); line-height: 1.62; margin-bottom: 26px; }
   .pb-hero-desc strong { color: var(--ink-2); font-weight: 600; }
-  .pb-hero-points { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 22px; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto; text-align: left; }
-  .pb-hero-points li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink-2); }
-  @media (max-width: 700px) { .pb-hero-points { grid-template-columns: 1fr; } }
+  .pb-hero-points { list-style: none; display: grid; gap: 11px; }
+  .pb-hero-points li { display: flex; gap: 11px; align-items: flex-start; font-size: 14.5px; color: var(--ink-2); }
   .pb-hero-points li svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--wa-deep); margin-top: 2px; }
+
+  .pb-hero-index { background: var(--white); border: 1px solid var(--gray-3); border-radius: var(--radius-xl); padding: 28px 28px 22px; box-shadow: var(--sh-card-hov); }
+  @media (max-width: 900px) { .pb-hero-index { padding: 24px 22px 18px; } }
+  .phi-head { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wa-deep); margin-bottom: 6px; }
+  .phi-head .wa-badge { width: 15px; height: 15px; }
+  .pb-hero-index h2 { font-family: var(--f-display); font-size: 19px; font-weight: 600; color: var(--ink-2); letter-spacing: -0.02em; margin-bottom: 18px; }
+  .phi-list { list-style: none; display: grid; }
+  .phi-list li { display: flex; gap: 14px; align-items: center; padding: 11px 0; border-top: 1px solid var(--gray-2); font-size: 14.5px; color: var(--ink-2); line-height: 1.4; letter-spacing: -0.01em; }
+  .phi-list li:first-child { border-top: none; padding-top: 2px; }
+  .phi-num { flex-shrink: 0; width: 27px; height: 27px; border-radius: 50%; background: var(--wa-muted); color: var(--wa-deep); font-family: var(--f-display); font-size: 12.5px; font-weight: 600; display: grid; place-items: center; }
+  .phi-foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--gray-2); display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); letter-spacing: -0.01em; }
+  .phi-foot svg { width: 15px; height: 15px; color: var(--wa-deep); flex-shrink: 0; }
 
   .section { padding: 84px 48px; }
   .section.alt { background: var(--gray-1); }
@@ -234,14 +248,29 @@
       </a>
       <span class="eyebrow wa"><svg class="wa-badge" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#FFFFFF" d="M12.03 5.2c-3.77 0-6.83 3.06-6.84 6.83 0 1.2.32 2.38.92 3.42l-.98 3.58 3.66-.96c1 .55 2.14.84 3.29.84h.003c3.77 0 6.83-3.06 6.84-6.83a6.8 6.8 0 0 0-2-4.84 6.78 6.78 0 0 0-4.83-2.01zm4 9.77c-.17.48-.99.92-1.38.98-.35.05-.8.07-1.29-.08-.3-.09-.68-.22-1.17-.43-2.06-.89-3.4-2.96-3.51-3.1-.1-.13-.83-1.1-.83-2.1 0-1 .52-1.49.71-1.69.19-.2.41-.25.55-.25l.4.01c.13 0 .3-.05.47.36.17.42.59 1.45.64 1.55.05.1.09.22.02.36-.07.13-.1.22-.2.34l-.3.35c-.1.1-.2.2-.09.4.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.96.19.1.3.08.41-.05.11-.13.47-.55.6-.74.12-.19.25-.16.41-.1.17.06 1.09.51 1.28.61.19.09.31.14.36.22.05.08.05.48-.12.96z"/></svg> Guia Salvy · Boas práticas</span>
     </div>
-    <div class="pb-hero-copy">
-      <h1 class="pb-hero-title">Boas práticas para <span class="accent">não perder</span> seu número no WhatsApp Business</h1>
-      <p class="pb-hero-desc">Todo mês, milhares de contas são suspensas pela Meta. Quase sempre por desconhecimento das regras, não por falta de sorte. <strong>Reunimos o que protege seu número, mantém a conta em conformidade e transforma o WhatsApp em um canal sólido de vendas e atendimento.</strong></p>
-      <ul class="pb-hero-points">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> O que a Meta permite, o que proíbe e o que gera bloqueio</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Como ativar, aquecer e escalar uma linha com segurança</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Os erros mais comuns que levam ao banimento</li>
-      </ul>
+    <div class="pb-hero-grid">
+      <div class="pb-hero-copy">
+        <h1 class="pb-hero-title">Boas práticas para <span class="accent">não perder</span> seu número no WhatsApp Business</h1>
+        <p class="pb-hero-desc">Todo mês, milhares de contas são suspensas pela Meta. Quase sempre por desconhecimento das regras, não por falta de sorte. <strong>Reunimos o que protege seu número, mantém a conta em conformidade e transforma o WhatsApp em um canal sólido de vendas e atendimento.</strong></p>
+        <ul class="pb-hero-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> O que a Meta permite, o que proíbe e o que gera bloqueio</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Como ativar, aquecer e escalar uma linha com segurança</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Os erros mais comuns que levam ao banimento</li>
+        </ul>
+      </div>
+      <aside class="pb-hero-index">
+        <div class="phi-head"><svg class="wa-badge" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#FFFFFF" d="M12.03 5.2c-3.77 0-6.83 3.06-6.84 6.83 0 1.2.32 2.38.92 3.42l-.98 3.58 3.66-.96c1 .55 2.14.84 3.29.84h.003c3.77 0 6.83-3.06 6.84-6.83a6.8 6.8 0 0 0-2-4.84 6.78 6.78 0 0 0-4.83-2.01zm4 9.77c-.17.48-.99.92-1.38.98-.35.05-.8.07-1.29-.08-.3-.09-.68-.22-1.17-.43-2.06-.89-3.4-2.96-3.51-3.1-.1-.13-.83-1.1-.83-2.1 0-1 .52-1.49.71-1.69.19-.2.41-.25.55-.25l.4.01c.13 0 .3-.05.47.36.17.42.59 1.45.64 1.55.05.1.09.22.02.36-.07.13-.1.22-.2.34l-.3.35c-.1.1-.2.2-.09.4.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.96.19.1.3.08.41-.05.11-.13.47-.55.6-.74.12-.19.25-.16.41-.1.17.06 1.09.51 1.28.61.19.09.31.14.36.22.05.08.05.48-.12.96z"/></svg> No guia</div>
+        <h2>O que você vai encontrar</h2>
+        <ul class="phi-list">
+          <li><span class="phi-num">1</span> As três formas de usar o WhatsApp</li>
+          <li><span class="phi-num">2</span> O que a Meta permite e o que gera bloqueio</li>
+          <li><span class="phi-num">3</span> Ativação e aquecimento da linha</li>
+          <li><span class="phi-num">4</span> Boas práticas e tom de voz</li>
+          <li><span class="phi-num">5</span> Casos de uso que funcionam</li>
+          <li><span class="phi-num">6</span> Erros comuns e indicadores de saúde</li>
+        </ul>
+        <div class="phi-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Guia completo · leitura de ~10 min</div>
+      </aside>
     </div>
   </div>
 </section>
